@@ -2,16 +2,28 @@
 
 Repositorio correspondiente a la asignatura **Diseño de Software para Equipos Móviles**.
 
+## Objetivo
+
+Documentar el desarrollo de las actividades realizadas durante el curso, aplicando buenas prácticas de diseño de software y desarrollo de aplicaciones móviles con Flutter.
+
 ## Tecnologías
+
 - Flutter
 - Dart
 - Android Studio
-- Git y GitHub
+- Git
+- GitHub
 
-## Contenido
-- Prácticas
-- Tareas
-- Proyecto Final
+## Estructura del repositorio
 
-## Objetivo
-Documentar el desarrollo de las actividades y proyectos realizados durante el curso, aplicando principios de diseño de software para aplicaciones móviles.
+```
+.
+├── practicas/
+├── tareas/
+├── proyecto_final/
+└── README.md
+```
+
+## Autor
+
+**Yeison Caraballo**
