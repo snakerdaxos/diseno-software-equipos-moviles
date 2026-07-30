@@ -48,20 +48,36 @@ EJERCICIO 2: IDENTIFICAR NÚMEROS POSITIVOS Y NEGATIVOS
  Escribe un programa en Dart que determine si un número ingresado
  por el usuario es positivo, negativo o cero
  -------------------------------------------------------------------*/
+
+// Importamos la librería para poder leer datos desde el teclado
 import "dart:io";
+
 void main() {
-  print("ingrese numero");
-String dato = stdin.readLineSync()!;
-int datoc = int.parse(dato);
- if(datoc < 0){
-     print("el dato ingresado es negativo: $datoc");
- }
- else if(datoc > 0){
-     print("el numero ingresado es positivo: $datoc");
- }
-else {
+  // Se solicita al usuario que ingrese un número
+  print("Ingrese un número:");
+
+  // Se lee el dato ingresado y se almacena como String
+  String dato = stdin.readLineSync()!;
+
+  // Se convierte el dato de tipo String a tipo int
+  int datoc = int.parse(dato);
+
+  // Se verifica si el número es menor que cero
+  // En ese caso se indica que es un número negativo
+  if (datoc < 0) {
+    print("El dato ingresado es negativo: $datoc");
+  }
+
+  // Se verifica si el número es mayor que cero
+  // En ese caso se indica que es un número positivo
+  else if (datoc > 0) {
+    print("El número ingresado es positivo: $datoc");
+  }
+
+  // Si no es positivo ni negativo, el número es cero
+  else {
     print("El dato ingresado es: $datoc");
-}
+  }
 }
 
 /*-------------------------------------------------------------------
@@ -72,6 +88,7 @@ EJERCIO 3: MESES DEL AÑO
  -------------------------------------------------------------------*/
 
 //importamos libreria para poder tener entrada por teclado 
+
 import 'dart:io';
 void main() { print("digita un numero entre el 1 al 12");
  //ejercicio del docente quedo mal explicado falta importar la libreria
@@ -101,18 +118,34 @@ EJERCICIO 4: SUMA DE NÚMEROS PARES EN UNA LISTA
  Salida: La suma de los números pares es: 12
  -------------------------------------------------------------------*/
 
-void main(){
-List <int> lista =[1,2,3,4,5,6];
-int p = 0;
-int total = 0;
- for (var i in lista){
-  if (i % 2 == 0){
+void main() {
+  // Se crea una lista de números enteros
+  List<int> lista = [1, 2, 3, 4, 5, 6];
+
+  // Se inicializan las variables para almacenar la suma
+  // y el total de los números pares
+  int p = 0;
+  int total = 0;
+
+  // Se recorre cada elemento de la lista
+  for (var i in lista) {
+
+    // Se verifica si el número es par
+    // Un número es par cuando el residuo de dividirlo entre 2 es 0
+    if (i % 2 == 0) {
+      // Se acumula el valor del número par
       p += i;
-      print("numero par: $i \n");
+
+      // Se muestra el número par encontrado
+      print("Número par: $i\n");
+    }
   }
- }
- total = p;
- print("para un total de: $total");
+
+  // Se guarda la suma total de los números pares
+  total = p;
+
+  // Se muestra el resultado final
+  print("Para un total de: $total");
 }
 
 /*-------------------------------------------------------------------
@@ -126,14 +159,23 @@ EJERCICIO 5: FILTRAR PALABRAS ÚNICAS EN UN SET
  Salida: {dart, flutter, codigo, movil}
 -------------------------------------------------------------------*/
 
-void main(){
- List<String> entrada = ["dart", "flutter", "dart", "codigo","flutter", "movil"];
- Set<String> salida = {}; 
- 
- for (var palabra in entrada){
-  salida.add(palabra);
+void main() {
+  // Se crea una lista de palabras que contiene algunos elementos repetidos
+  List<String> entrada = ["dart","flutter","dart","codigo","flutter","movil"];
+
+  // Se crea un Set vacío para almacenar únicamente
+  // las palabras sin repetir
+  Set<String> salida = {};
+
+  // Se recorre cada palabra de la lista
+  for (var palabra in entrada) {
+    // Se agrega la palabra al Set.
+    // Si la palabra ya existe, el Set no la vuelve a almacenar.
+    salida.add(palabra);
   }
- print(salida);
+
+  // Se imprime el contenido del Set con las palabras únicas
+  print(salida);
 }
 
 
@@ -148,16 +190,28 @@ EJERCICIO 6: CONTAR LA FRECUENCIA DE PALABRAS EN UN MAP
 */
 
 void main() {
+  // Se crea una lista de palabras, algunas de ellas repetidas
   List<String> entrada = ["dart","flutter","dart","codigo","flutter","movil","dart"];
+
+  // Se crea un Map para almacenar cada palabra
+  // junto con la cantidad de veces que aparece
   Map<String, int> frecuencia = {};
 
+  // Se recorre cada palabra de la lista
   for (var palabra in entrada) {
+
+    // Se verifica si la palabra ya existe en el Map
     if (frecuencia.containsKey(palabra)) {
+
+      // Si existe, se incrementa su contador en 1
       frecuencia[palabra] = frecuencia[palabra]! + 1;
     } else {
+
+      // Si no existe, se agrega al Map con un valor inicial de 1
       frecuencia[palabra] = 1;
     }
   }
 
+  // Se imprime el Map con la frecuencia de cada palabra
   print(frecuencia);
 }
