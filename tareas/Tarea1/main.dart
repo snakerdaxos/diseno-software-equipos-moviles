@@ -1,4 +1,4 @@
-/*
+/*-------------------------------------------------------------------
 EJERCICIO 1: CALCULADORA DE PROPINA
 Objetivo:
  Escribe un programa en Dart que calcule cuánto debe pagar cada persona
@@ -11,7 +11,7 @@ Objetivo:
 4.	Pedir el número de personas para dividir la cuenta.
 5.	Calcular cuánto debe pagar cada persona.
 6.	Mostrar el resultado en pantalla.
-*/
+-------------------------------------------------------------------*/
 
 //importamos libreria para poder tener entrada por teclado
 import 'dart:io';
@@ -42,12 +42,12 @@ void main() {
 }
 
 
-/*
+/*-------------------------------------------------------------------
 EJERCICIO 2: IDENTIFICAR NÚMEROS POSITIVOS Y NEGATIVOS
  Objetivo:
  Escribe un programa en Dart que determine si un número ingresado
  por el usuario es positivo, negativo o cero
- */
+ -------------------------------------------------------------------*/
 import "dart:io";
 void main() {
   print("ingrese numero");
@@ -64,12 +64,12 @@ else {
 }
 }
 
-/*
+/*-------------------------------------------------------------------
 EJERCIO 3: MESES DEL AÑO
  Objetivo:
  Escribe un programa en Dart que reciba un número entre 1 y 12
  e imprima el nombre del mes correspondiente del año.
- */
+ -------------------------------------------------------------------*/
 
 //importamos libreria para poder tener entrada por teclado 
 import 'dart:io';
@@ -90,26 +90,74 @@ print("El mes correspondiente es: ${mes[datoInt - 1]}");
 }
 }
 
-/*
+/*-------------------------------------------------------------------
 EJERCICIO 4: SUMA DE NÚMEROS PARES EN UNA LISTA
  Objetivo:
  Escribe un programa en Dart que tome una lista de números enteros
  y calcule la suma de todos los números pares en la lista
- */
 
+ Ejemplo:
+ Entrada: [1, 2, 3, 4, 5, 6]
+ Salida: La suma de los números pares es: 12
+ -------------------------------------------------------------------*/
 
-/*
+void main(){
+List <int> lista =[1,2,3,4,5,6];
+int p = 0;
+int total = 0;
+ for (var i in lista){
+  if (i % 2 == 0){
+      p += i;
+      print("numero par: $i \n");
+  }
+ }
+ total = p;
+ print("para un total de: $total");
+}
+
+/*-------------------------------------------------------------------
 EJERCICIO 5: FILTRAR PALABRAS ÚNICAS EN UN SET
  Objetivo:
  Escribe un programa en Dart que reciba una lista de palabras con
  algunas repetidas y almacene solo las palabras únicas en un Set.
  Luego, muestra el conjunto resultante.
-*/
+ Ejemplo:
+ Entrada: ["dart", "flutter", "dart", "codigo", "flutter", "movil"]
+ Salida: {dart, flutter, codigo, movil}
+-------------------------------------------------------------------*/
+
+void main(){
+ List<String> entrada = ["dart", "flutter", "dart", "codigo","flutter", "movil"];
+ Set<String> salida = {}; 
+ 
+ for (var palabra in entrada){
+  salida.add(palabra);
+  }
+ print(salida);
+}
+
 
 /*
 EJERCICIO 6: CONTAR LA FRECUENCIA DE PALABRAS EN UN MAP
  Objetivo:
  Escribe un programa en Dart que reciba una lista de palabras y cuente cuántas
- veces aparece cada una, almacenando e
+ veces aparece cada una, almacenando en un map.
+ Ejemplo:
+ Entrada: ["dart", "flutter", "dart", "codigo", "flutter", "movil", "dart"]
+ Salida:  {dart: 3, flutter: 2, codigo: 1, movil: 1}
 */
 
+void main() {
+  List<String> entrada = ["dart","flutter","dart","codigo","flutter","movil","dart"];
+  Map<String, int> frecuencia = {};
+
+  for (var palabra in entrada) {
+    if (frecuencia.containsKey(palabra)) {
+      frecuencia[palabra] = frecuencia[palabra]! + 1;
+    } else {
+      frecuencia[palabra] = 1;
+    }
+  }
+
+  print(frecuencia);
+}
